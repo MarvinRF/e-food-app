@@ -1,5 +1,3 @@
-import React from 'react'
-import Header from '../../Header'
 import Restaurants from '../../Restaurants'
 
 import japan from '../../../assets/sushi.png'
