@@ -8,6 +8,7 @@ export const Imagem = styled.div`
   text-align: center;
   height: 298px;
   width: 100%;
+  margin-top: 120px;
 `
 export const SocialMediaContainer = styled.div`
   padding-bottom: 80px;

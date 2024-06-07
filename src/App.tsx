@@ -1,4 +1,3 @@
-import Header from './components/Header'
 import { GlobalCss } from './styles'
 
 import Rotas from './routes'
@@ -9,7 +8,6 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalCss />
-      <Header />
       <Rotas />
       <Footer />
     </BrowserRouter>

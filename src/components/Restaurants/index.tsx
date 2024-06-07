@@ -40,7 +40,9 @@ const Restaurants = ({ description, image, infos, title, rating }: Props) => {
           </RatingContainer>
         </TitleContainer>
         <Descricao>{description}</Descricao>
-        <Button>Saiba mais</Button>
+        <Button>
+          <a href="/restaurant">Saiba mais</a>
+        </Button>
       </Card>
     </RestContainer>
   )

@@ -2,6 +2,7 @@ import RestaurantsList from '../../RestaurantsList'
 import Restaurant from '../../models/Restaurant'
 import japan from '../../../assets/sushi.png'
 import tratoria from '../../../assets/pasta.png'
+import Header from '../../Header'
 
 const destaque: Restaurant[] = [
   {
@@ -63,6 +64,7 @@ const destaque: Restaurant[] = [
 const Home = () => {
   return (
     <div>
+      <Header />
       <RestaurantsList restaurant={destaque} />
     </div>
   )
