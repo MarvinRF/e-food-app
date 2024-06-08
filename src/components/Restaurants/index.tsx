@@ -11,23 +11,38 @@ import {
 } from './styles'
 import Tag from '../Tag'
 import star from '../../assets/estrela.svg'
+import { TagContainer } from '../Tag/styles'
+import { Link } from 'react-router-dom'
 
 type Props = {
-  title: string
-  description: string
+  infos: string
   image: string
-  infos: string[]
-  rating: string
+  title: string
+  rating: number
+  description: string
+  button: string
+  tipo: string
+  destacado: boolean
+  id: number
 }
 
-const Restaurants = ({ description, image, infos, title, rating }: Props) => {
+const Restaurants = ({
+  description,
+  image,
+  infos,
+  title,
+  rating,
+  destacado,
+  id
+}: Props) => {
   return (
     <RestContainer>
       <img src={image} alt={title} />
       <Infos>
-        {infos.map((info) => (
-          <Tag key={info}>{info}</Tag>
-        ))}
+        {destacado === true ? (
+          <TagContainer>Destaque da semana</TagContainer>
+        ) : null}
+        <TagContainer>{infos}</TagContainer>
       </Infos>
       <Card>
         <TitleContainer>
@@ -41,7 +56,7 @@ const Restaurants = ({ description, image, infos, title, rating }: Props) => {
         </TitleContainer>
         <Descricao>{description}</Descricao>
         <Button>
-          <a href="/restaurant">Saiba mais</a>
+          <Link to={`restaurant/${id}`}>Saiba mais</Link>
         </Button>
       </Card>
     </RestContainer>

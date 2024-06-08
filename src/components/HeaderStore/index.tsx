@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from '../../assets/logo.png'
 import {
   Imagem,
@@ -13,10 +12,20 @@ import {
   LinkCart
 } from './styles'
 import background from '../../assets/background-header.png'
-import tratoria from '../../assets/tratoria_banner.png'
 import carrinho from '../../assets/carrinho.svg'
+import { Restaurant } from '../pages/Home'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 const HeaderStore = () => {
+  const { id } = useParams()
+  const [restaurant, setRestaurant] = useState<Restaurant>()
+
+  useEffect(() => {
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
+      .then((res) => res.json())
+      .then((res) => setRestaurant(res))
+  }, [id])
   return (
     <>
       <Imagem style={{ backgroundImage: `url(${background}) ` }}>
@@ -31,10 +40,12 @@ const HeaderStore = () => {
           </LinkCart>
         </ContentContainer>
       </Imagem>
-      <RestaurantBanner style={{ backgroundImage: `url(${tratoria}) ` }}>
+      <RestaurantBanner
+        style={{ backgroundImage: `url(${restaurant?.capa}) ` }}
+      >
         <RestaurantBannerContainer>
-          <TextBanner>Italiana</TextBanner>
-          <TitleBanner>La Dolce Vita Trattoria</TitleBanner>
+          <TextBanner>{restaurant?.tipo}</TextBanner>
+          <TitleBanner>{restaurant?.titulo}</TitleBanner>
         </RestaurantBannerContainer>
       </RestaurantBanner>
       <Overlay />

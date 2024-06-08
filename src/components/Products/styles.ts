@@ -7,6 +7,15 @@ export const Card = styled.div`
   padding: 8px;
   border: 1px solid ${colors.darkPink};
   margin-bottom: 32px;
+  width: 100%;
+  max-width: 320px;
+  max-height: 340px;
+  img {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 167px;
+  }
 `
 export const Titulo = styled.h3`
   font-weight: bold;
@@ -32,6 +41,7 @@ export const Button = styled.button`
   padding: 6px 4px;
   display: inline-block;
   border: none;
+  cursor: pointer;
 `
 export const Infos = styled.div`
   position: absolute;

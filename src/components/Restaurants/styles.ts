@@ -4,10 +4,19 @@ import { TagContainer } from '../Tag/styles'
 
 export const RestContainer = styled.div`
   position: relative;
+  width: 100%;
+  max-width: 472px;
   margin-bottom: 48px;
 
   ${TagContainer} {
     margin-right: 8px;
+  }
+  img {
+    width: 100%;
+    max-width: 472px;
+    height: 100%;
+    height: 217px;
+    object-fit: cover;
   }
 `
 
@@ -15,7 +24,8 @@ export const Card = styled.div`
   background-color: ${colors.white};
   padding: 8px;
   border: 1px solid ${colors.darkPink};
-  margin-top: -4px;
+  margin-top: -5px;
+  max-width: 472px;
 `
 export const Titulo = styled.h3`
   font-weight: bold;
@@ -55,4 +65,9 @@ export const TitleContainer = styled.div`
 export const RatingContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
 `
