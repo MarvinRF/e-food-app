@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 
 export const Imagem = styled.div`
-  background-color: ${colors.lightPink};
+  background-color: ${colors.beige};
   display: block;
   justify-content: center;
   text-align: center;

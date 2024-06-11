@@ -1,66 +1,67 @@
-import React from 'react'
-import {
-  Card,
-  Descricao,
-  Infos,
-  Titulo,
-  RestContainer,
-  Button,
-  TitleContainer,
-  RatingContainer
-} from './styles'
-import Tag from '../Tag'
-import star from '../../assets/estrela.svg'
-import { TagContainer } from '../Tag/styles'
 import { Link } from 'react-router-dom'
 
+import star from '../../assets/estrela.svg'
+
+import {
+  Card,
+  CardContainer,
+  TitleContainer,
+  Title,
+  Rating,
+  Description,
+  Infos,
+  TagContainer,
+  RatingContainer,
+  KnowMore
+} from './styles'
+
 type Props = {
-  infos: string
+  id: number | undefined
   image: string
   title: string
-  rating: number
+  number: number
   description: string
   button: string
   tipo: string
   destacado: boolean
-  id: number
 }
 
 const Restaurants = ({
-  description,
+  id,
   image,
-  infos,
   title,
-  rating,
-  destacado,
-  id
-}: Props) => {
-  return (
-    <RestContainer>
-      <img src={image} alt={title} />
-      <Infos>
-        {destacado === true ? (
-          <TagContainer>Destaque da semana</TagContainer>
-        ) : null}
-        <TagContainer>{infos}</TagContainer>
-      </Infos>
-      <Card>
-        <TitleContainer>
-          <Titulo>{title}</Titulo>
-          <RatingContainer>
-            <Titulo>{rating}</Titulo>
-            <span>
-              <img src={star} alt="star" />
-            </span>
-          </RatingContainer>
-        </TitleContainer>
-        <Descricao>{description}</Descricao>
-        <Button>
-          <Link to={`restaurant/${id}`}>Saiba mais</Link>
-        </Button>
-      </Card>
-    </RestContainer>
-  )
-}
+  number,
+  description,
+  tipo,
+  destacado
+}: Props) => (
+  <Card>
+    <img src={image} alt={title} />
+    <Infos>
+      {destacado === true ? (
+        <TagContainer>Destaque da semana</TagContainer>
+      ) : null}
+      <TagContainer>{tipo}</TagContainer>
+    </Infos>
+    <CardContainer>
+      <TitleContainer>
+        <Title>{title}</Title>
+        <RatingContainer>
+          <Rating>{number}</Rating>
+          <img src={star} alt="Estrelas" />
+        </RatingContainer>
+      </TitleContainer>
+      <Description>{description}</Description>
+      <KnowMore>
+        <Link
+          style={{ textDecoration: 'none', color: '#FFEBD9' }}
+          to={`cardapio/${id}`}
+        >
+          Saiba mais
+        </Link>
+      </KnowMore>
+    </CardContainer>
+  </Card>
+)
 
 export default Restaurants

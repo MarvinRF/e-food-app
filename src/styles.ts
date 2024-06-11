@@ -1,9 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
-  darkPink: '#E66767',
-  white: '#FFFFFF',
-  lightPink: '#FFEBD9'
+  beige: '#FFEBD9',
+  lightBeige: '#FFF8F2',
+  coral: '#E66767',
+  white: '#ffffff'
 }
 
 export const GlobalCss = createGlobalStyle`
@@ -21,7 +22,7 @@ export const GlobalCss = createGlobalStyle`
   margin: 0 auto;
 }
 body{
-  background-color: ${colors.white};
-  color: ${colors.darkPink};
+  background-color: ${colors.lightBeige};
+  color: ${colors.coral};
 }
 `

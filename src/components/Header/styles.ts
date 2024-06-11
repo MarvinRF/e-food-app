@@ -18,7 +18,7 @@ export const Logo = styled.img`
   height: 58px;
 `
 export const Title = styled.h1`
-  color: ${colors.darkPink};
+  color: ${colors.coral};
   text-align: center;
   justify-content: center;
   font-size: 36px;
