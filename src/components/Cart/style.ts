@@ -2,8 +2,6 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
-import lixeira from '../../assets/close.png'
-
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -62,15 +60,18 @@ export const CartItem = styled.li`
   }
 
   button {
-    background-image: url(${lixeira});
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
     border: none;
     background-color: transparent;
     position: absolute;
     bottom: 8px;
     right: 8px;
     cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 `
 

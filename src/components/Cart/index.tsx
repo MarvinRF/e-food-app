@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
 import { priceFormat } from '../RestaurantDishes'
+import trash from '../../assets/trash.png'
 
 import {
   Overlay,
@@ -44,7 +45,9 @@ const Cart = () => {
                 <h3>{item.nome}</h3>
                 <span>{priceFormat(item.preco)}</span>
               </div>
-              <button onClick={() => removeItem(item.id)} type="button" />
+              <button onClick={() => removeItem(item.id)} type="button">
+                <img src={trash} alt="lixeira" />
+              </button>
             </CartItem>
           ))}
         </ul>
