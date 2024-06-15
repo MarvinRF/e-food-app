@@ -22,10 +22,6 @@ type ModalState = {
   isVisible: boolean
 }
 
-type PratoProps = {
-  prato: Prato
-}
-
 export const priceFormat = (preco = 0) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -71,6 +67,7 @@ const RestaurantDishes = ({
   const addToCart = () => {
     dispatch(add(prato))
     dispatch(open())
+    closeModal()
   }
 
   return (
@@ -111,7 +108,7 @@ const RestaurantDishes = ({
             <InfosContainer>
               <h4>{nome}</h4>
               <p>{descricao}</p>
-              <p>{porcao}</p>
+              <p>Serve de {porcao}</p>
               <ButtonAdd onClick={addToCart}>
                 Adicionar ao carrinho - {priceFormat(preco)}
               </ButtonAdd>

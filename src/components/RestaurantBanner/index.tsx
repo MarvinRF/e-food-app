@@ -4,6 +4,7 @@ import { useGetBannerQuery } from '../../services/api'
 
 const RestaurantBanner = () => {
   const { id } = useParams()
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { data: restaurant } = useGetBannerQuery(id!)
 
   return (

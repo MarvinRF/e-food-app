@@ -1,4 +1,5 @@
 import Header from '../../components/Header'
+import Loader from '../../components/Loader'
 import RestaurantsList from '../../components/RestaurantsList'
 import { useGetRestaurantsQuery } from '../../services/api'
 
@@ -32,7 +33,7 @@ const Home = () => {
     )
   }
 
-  return <h3>Carregando...</h3>
+  return <Loader />
 }
 
 export default Home

@@ -6,6 +6,7 @@ import Banner from '../../components/RestaurantBanner'
 import DishesList from '../../components/DishesList'
 
 import { useGetRestaurantQuery } from '../../services/api'
+import Loader from '../../components/Loader'
 
 export type Prato = {
   id: number
@@ -27,8 +28,12 @@ export interface Restaurants {
   cardapio: Prato[]
 }
 
+type PratoParams = {
+  id: string
+}
+
 const Categories = () => {
-  const { id } = useParams()
+  const { id } = useParams() as PratoParams
 
   const { data: restaurant } = useGetRestaurantQuery(id!)
 
@@ -42,7 +47,7 @@ const Categories = () => {
     )
   }
 
-  return <h3>Carregando...</h3>
+  return <Loader />
 }
 
 export default Categories
