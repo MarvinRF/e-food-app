@@ -5,7 +5,6 @@ import { close, remove } from '../../store/reducers/cart'
 import { priceFormat } from '../RestaurantDishes'
 import { getTotalPrice } from '../../utils'
 import trash from '../../assets/trash.png'
-import { useNavigate } from 'react-router-dom'
 
 import {
   Overlay,
@@ -22,7 +21,6 @@ const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
   const [payment, setPayment] = useState(false)
   const dispatch = useDispatch()
-  const navigate = useNavigate()
 
   const closeCart = () => {
     dispatch(close())

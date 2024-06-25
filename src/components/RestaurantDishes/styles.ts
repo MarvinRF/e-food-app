@@ -136,6 +136,29 @@ export const ModalContent = styled.div`
     cursor: pointer;
     margin: 0;
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+
+    img {
+      height: 150px;
+      width: 150px;
+      margin: 0 10px 0 0;
+    }
+
+    > img {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      margin: 0;
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `
 export const InfosContainer = styled.div`
   h4 {

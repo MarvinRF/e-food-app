@@ -23,12 +23,18 @@ export const Text = styled.p`
   font-weight: 100;
   font-size: 32px;
   margin-top: 24px;
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `
 
 export const Title = styled.h2`
   font-size: 32px;
   color: ${colors.white};
   margin-bottom: 32px;
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `
 
 export const Container = styled.div`

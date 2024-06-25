@@ -13,7 +13,12 @@ export const HeaderContainer = styled.div`
     display: flex;
     text-align: center;
     padding: 40px 0;
-
+    @media (max-width: 768px) {
+      max-width: 85%;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 20px;
+    }
     p {
       color: ${colors.coral};
     }
